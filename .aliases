@@ -1,0 +1,33 @@
+# ------------------------ ZSH ------------------------ #
+alias zc="code ~/.zshrc"
+alias ozc="code ~/.oh-my-zsh"
+alias zs="source ~/.zshrc"
+alias zcr="rm -f ~/.zcompdump; compinit"
+alias cl="clear"
+alias sshc="code ~/.ssh"
+
+# ------------------------ MISC ------------------------ #
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+alias shell="echo $SHELL"
+alias sshkey="pbcopy < ~/.ssh/id_rsa.pub"
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec ${SHELL} -l"
+# ------------------------ NGINX ------------------------ #
+alias nginxc="code /usr/local/etc/nginx/"
+
+# ------------------------ PHP ------------------------ #
+alias phpc="code /usr/local/etc/php/7.3/"
+
+# ------------------------ MYSQL ------------------------ #
+alias mysqlc="code ~/.my.cnf.d/"
+
+# ------------------------ GIT ------------------------ #
+alias gitc="git config --global --edit"
+alias ghide="git update-index --assume-unchanged"
+alias gunhide="git update-index --no-assume-unchanged"
+
+# ------------------------ BREW SERVICES ------------------------ #
+alias startdev="sudo brew services start php && sudo brew services start nginx && sudo brew services start dnsmasq && brew services start mariadb"
+alias restartdev="sudo brew services restart php && sudo brew services restart nginx && sudo brew services restart dnsmasq && brew services restart mariadb"
+alias stopdev="sudo brew services stop php && sudo brew services stop nginx && sudo brew services stop dnsmasq && brew services stop mariadb"

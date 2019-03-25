@@ -1,0 +1,19 @@
+[alias]
+
+[user]
+	name = Marvin J. Cortés
+	email = marvin.cortes@gmail.com
+[core]
+	editor = code -a
+[code]
+	editor = code --wait
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[color]
+	ui = true
