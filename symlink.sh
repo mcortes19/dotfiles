@@ -7,6 +7,7 @@ function createSymlinks() {
     fi
   done
   rm -rf ~/.git;
+  source ~/.zshrc;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
