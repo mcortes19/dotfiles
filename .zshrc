@@ -2,6 +2,7 @@
 export ZSH=/Users/mcortes19/.oh-my-zsh
 
 #-------------- POWERLEVEL9K SETTINGS --------------#
+# https://github.com/bhilburn/powerlevel9k
 # powerlevel9k theme settings
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -49,6 +50,7 @@ POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="196"
 POWERLEVEL9K_STATUS_VERBOSE="false"
 
 # fonts config
+# https://medium.freecodecamp.org/how-you-can-style-your-terminal-like-medium-freecodecamp-or-any-way-you-want-f499234d48bc
 POWERLEVEL9K_MODE="nerdfont-complete"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -76,8 +78,10 @@ plugins=(
   zsh-completions
   docker
   docker-compose
+  vagrant
 )
 
+# Load OH-MY-ZSH themes and plugins
 source $ZSH/oh-my-zsh.sh
 
 # iTerm2 integration
