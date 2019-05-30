@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+#----- This file speeds up the process of running executable files. -----#
+
+export PATH="/bin:/usr/local/sbin:$PATH"

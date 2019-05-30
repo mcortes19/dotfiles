@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 function createSymlinks() {
   # Make a symlink for all dotfiles in this directory
   for file in \.[^.]*; do

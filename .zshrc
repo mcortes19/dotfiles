@@ -1,7 +1,10 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/mcortes19/.oh-my-zsh
+#!/usr/bin/env bash
+#----- This file you can customise and set the various colors of your zsh shell. -----#
 
-#-------------- POWERLEVEL9K SETTINGS --------------#
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+#-- POWERLEVEL9K SETTINGS --#
 # https://github.com/bhilburn/powerlevel9k
 # powerlevel9k theme settings
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -81,18 +84,16 @@ plugins=(
   vagrant
 )
 
-# Load OH-MY-ZSH themes and plugins
+# Load OH-MY-ZSH themes and plugins.
 source $ZSH/oh-my-zsh.sh
 
 # iTerm2 integration
-# source ~/.iterm2/.iterm2_shell_integration.zsh
-
-# User configuration
-export PATH="/bin:/usr/local/sbin:$PATH"
+source ~/.iterm2/.iterm2_shell_integration.zsh
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend $PATH.
-for file in ~/.{aliases,exports,nvm-script}; do
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,aliases,exports,nvm-script,functions,extra}; do
  [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
