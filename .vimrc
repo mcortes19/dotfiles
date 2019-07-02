@@ -1,1 +1,0 @@
-highlight Comment cterm=italic
