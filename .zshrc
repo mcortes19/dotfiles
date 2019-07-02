@@ -7,8 +7,8 @@
 # * ~/.aliases extend the system aliases.
 # * ~/.exports extend export.
 # * ~/.functions add custom functions.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{theme,path,aliases,exports,functions,extra}; do
+# * ~/.extras can be used for other settings you don’t want to commit.
+for file in ~/.{aliases,exports,functions,path,theme,extras}; do
  [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
