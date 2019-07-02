@@ -30,6 +30,12 @@ brew install git
 brew install composer
 brew install php
 brew install wget
+if test ! $(which zsh)
+then
+  brew install zsh
+  # Set zsh as your default shell
+  chsh -s /bin/zsh
+fi
 
 # Install taps
 brew tap homebrew/cask-fonts
