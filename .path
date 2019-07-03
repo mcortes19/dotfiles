@@ -2,4 +2,4 @@
 
 #----- This file speeds up the process of running executable files. -----#
 
-export PATH="/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
