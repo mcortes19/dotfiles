@@ -5,7 +5,7 @@
 #-- POWERLEVEL9K SETTINGS --#
 # https://github.com/bhilburn/powerlevel9k
 # powerlevel9k theme settings
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Left prompt settings
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
