@@ -12,28 +12,33 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 status
 background_jobs_joined
 root_indicator_joined
-context
 os_icon
-dir
+user
 dir_writable
+dir
 vcs
 )
 # Right prompt settings
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 
-POWERLEVEL9K_DISABLE_RPROMPT=true
+# Disable Right Prompt.
+# POWERLEVEL9K_DISABLE_RPROMPT=true
 
 # Color schema
 # https://github.com/Powerlevel9k/powerlevel9k/wiki/Stylizing-Your-Prompt
 
-# Context element settings
-POWERLEVEL9K_CONTEXT_TEMPLATE=$USER
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=white
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND=cyan
+# User element settings
+POWERLEVEL9K_ALWAYS_SHOW_USER=true
+POWERLEVEL9K_USER_FOREGROUND=white
+POWERLEVEL9K_USER_BACKGROUND=cyan
+
+# Time element settings
+POWERLEVEL9K_TIME_FOREGROUND=white
+POWERLEVEL9K_TIME_BACKGROUND=grey27
 
 # OS icon elements settings
 POWERLEVEL9K_OS_ICON_FOREGROUND=white
-POWERLEVEL9K_OS_ICON_BACKGROUND=cyan
+POWERLEVEL9K_OS_ICON_BACKGROUND=grey27
 
 # dir element settings
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
