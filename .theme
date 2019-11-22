@@ -9,17 +9,19 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 
 # Left prompt settings
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-status
-background_jobs_joined
-root_indicator_joined
-os_icon
-user
-dir_writable
-dir
-vcs
+  status
+  background_jobs_joined
+  root_indicator_joined
+  os_icon
+  user
+  dir_writable
+  dir
+  vcs
 )
 # Right prompt settings
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+  time
+)
 
 # Disable Right Prompt.
 # POWERLEVEL9K_DISABLE_RPROMPT=true
