@@ -33,3 +33,8 @@ source $ZSH/oh-my-zsh.sh
 
 # iTerm2 integration
 source ~/.iterm2/.iterm2_shell_integration.zsh
+
+# zsh-completions.
+autoload -U compinit && compinit
+# zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'

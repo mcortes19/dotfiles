@@ -11,7 +11,6 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   status
   background_jobs_joined
-  root_indicator_joined
   os_icon
   user
   dir_writable
@@ -20,7 +19,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 )
 # Right prompt settings
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-  time
+  nvm
 )
 
 # Disable Right Prompt.
@@ -35,7 +34,7 @@ POWERLEVEL9K_USER_FOREGROUND=white
 POWERLEVEL9K_USER_BACKGROUND=cyan
 
 # Time element settings
-POWERLEVEL9K_TIME_FOREGROUND=white
+POWERLEVEL9K_TIME_FOREGROUND=cyan
 POWERLEVEL9K_TIME_BACKGROUND=grey27
 
 # OS icon elements settings
@@ -57,8 +56,20 @@ POWERLEVEL9K_DIR_ETC_FOREGROUND=white
 
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND=black
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND=red1
-# Status element settings #
+
+# NVM elements settings
+POWERLEVEL9K_NVM_FOREGROUND=green
+POWERLEVEL9K_NVM_BACKGROUND=grey27
+
+
+# Status element settings
 POWERLEVEL9K_STATUS_VERBOSE=false
+
+# VCS element settings
+
+POWERLEVEL9K_VCS_SHORTEN_LENGTH=15
+POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=7
+POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
 
 # fonts config
 # https://medium.freecodecamp.org/how-you-can-style-your-terminal-like-medium-freecodecamp-or-any-way-you-want-f499234d48bc
@@ -76,3 +87,5 @@ ENABLE_CORRECTION=true
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS=true
+
+
