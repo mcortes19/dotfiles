@@ -66,10 +66,9 @@ POWERLEVEL9K_NVM_BACKGROUND=grey27
 POWERLEVEL9K_STATUS_VERBOSE=false
 
 # VCS element settings
-
-POWERLEVEL9K_VCS_SHORTEN_LENGTH=15
-POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=7
-POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
+# POWERLEVEL9K_VCS_SHORTEN_LENGTH=15
+# POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=7
+# POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
 
 # fonts config
 # https://medium.freecodecamp.org/how-you-can-style-your-terminal-like-medium-freecodecamp-or-any-way-you-want-f499234d48bc
