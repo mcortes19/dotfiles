@@ -1,17 +1,10 @@
-# Marvin's dotfiles
+# Mac Installation Instructions
 
-## `~/.$HOME` file structure
+## Run `./setup.sh`
 
-- `.aliases` extend the system aliases.
-- `.editorconfig` set the editor configuration.
-- `.exports` set all shell export variables.
-- `.functions` set custom functions.
-- `.gitconfig` set the default git config.
-- `.gitignore` set the default git config.
-- `.path` extend the $PATH variable.
-- `.theme` set the shell theme.
-- `.zshrc` includes all above files.
+What this does:
 
-## Usage
-
-- Run `./install.sh`
+* Installs Homebrew and app binaries. See [brew.sh](./brew.sh) for a list of installed items
+* Creates symlinks from `./dotfiles` folder to `$HOME` folder.
+* Installs Oh my ZSH and some useful plugins.
+* Sets several defaults for MacOS

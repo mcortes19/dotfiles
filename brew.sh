@@ -3,16 +3,10 @@
 # Install Homebrew (if not installed)
 if test ! $(which brew)
 then
-  echo "Installing Homebrew..."
-
   # Install the correct homebrew for each OS type
-  if test "$(uname)" = "Darwin"
-  then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
-  then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-  fi
+  echo "Installing Homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 fi
 
 # Make sure we’re using the latest Homebrew.
@@ -25,11 +19,13 @@ brew upgrade
 BREW_PREFIX=$(brew --prefix)
 
 brew install tree
-brew install node
 brew install git
 brew install composer
 brew install php
 brew install wget
+brew install ahoy
+brew tap beeftornado/rmtree
+
 if test ! $(which zsh)
 then
   brew install zsh
@@ -48,10 +44,8 @@ brew cask install font-hack-nerd-font
 brew cask install firefox
 brew cask install google-chrome
 brew cask install iterm2
-brew cask install slack
-brew cask install spotify
-brew cask install telegram
 brew cask install visual-studio-code
+brew cask install browserosaurus
 brew cask install virtualbox virtualbox-extension-pack
 
 # Remove outdated versions from the cellar.
