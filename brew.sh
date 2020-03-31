@@ -18,12 +18,15 @@ brew upgrade
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
-brew install tree
-brew install git
-brew install composer
-brew install php
-brew install wget
 brew install ahoy
+brew install composer
+brew install ddev
+brew install git
+brew install heroku
+brew install php
+brew install tree
+brew install vagrant
+brew install wget
 brew tap beeftornado/rmtree
 
 if test ! $(which zsh)
@@ -41,11 +44,12 @@ brew tap caskroom/cask
 brew cask install font-hack-nerd-font
 
 # Install Apps.
+brew cask install browserosaurus
+brew cask install docker
 brew cask install firefox
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install visual-studio-code
-brew cask install browserosaurus
 brew cask install virtualbox virtualbox-extension-pack
 
 # Remove outdated versions from the cellar.
