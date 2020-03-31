@@ -22,7 +22,7 @@ brew install ahoy
 brew install composer
 brew tap drud/ddev && brew install ddev
 brew install git
-brew install heroku
+brew tap heroku/brew && brew install heroku
 brew install php
 brew install tree
 brew install vagrant
