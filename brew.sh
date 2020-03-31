@@ -20,7 +20,7 @@ BREW_PREFIX=$(brew --prefix)
 
 brew install ahoy
 brew install composer
-brew install ddev
+brew tap drud/ddev && brew install ddev
 brew install git
 brew install heroku
 brew install php
