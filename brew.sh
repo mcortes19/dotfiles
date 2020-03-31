@@ -25,7 +25,6 @@ brew install git
 brew tap heroku/brew && brew install heroku
 brew install php
 brew install tree
-brew install vagrant
 brew install wget
 brew tap beeftornado/rmtree
 
@@ -51,6 +50,7 @@ brew cask install google-chrome
 brew cask install iterm2
 brew cask install visual-studio-code
 brew cask install virtualbox virtualbox-extension-pack
+brew cask install vagrant
 
 # Remove outdated versions from the cellar.
 brew cleanup
