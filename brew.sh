@@ -35,12 +35,6 @@ then
   chsh -s /bin/zsh
 fi
 
-# Install taps
-brew tap homebrew/cask-fonts
-brew tap caskroom/cask
-
-# Install fonts.
-brew cask install font-hack-nerd-font
 
 # Install Apps.
 brew cask install browserosaurus
@@ -51,6 +45,12 @@ brew cask install iterm2
 brew cask install visual-studio-code
 brew cask install virtualbox virtualbox-extension-pack
 brew cask install vagrant
+
+# Install taps
+brew tap homebrew/cask-fonts
+
+# Install fonts.
+brew cask install font-hack-nerd-font
 
 # Remove outdated versions from the cellar.
 brew cleanup
