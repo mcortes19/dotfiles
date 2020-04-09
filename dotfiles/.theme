@@ -30,7 +30,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 
 # User element settings
 POWERLEVEL9K_ALWAYS_SHOW_USER=true
-POWERLEVEL9K_USER_FOREGROUND=white
+POWERLEVEL9K_USER_FOREGROUND=grey27
 POWERLEVEL9K_USER_BACKGROUND=cyan
 
 # Time element settings
@@ -86,5 +86,3 @@ ENABLE_CORRECTION=true
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS=true
-
-
