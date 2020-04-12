@@ -7,7 +7,7 @@ source ./brew.sh
 source ./symlink-dotfiles.sh
 
 # Install Oh-My-ZSH.
-source ./oh-my-szh.sh
+source ./oh-my-zsh.sh
 
 # Install Global Composer Packages.
 source ./composer.sh
