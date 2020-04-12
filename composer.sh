@@ -1,6 +1,6 @@
 
 composer global require pantheon-systems/terminus:"^2.3"
-composer global require drush/drush:"^8.3"
+composer global require drush/drush:"^9.7"
 
 ln -sf "$HOME/.composer/vendor/pantheon-systems/terminus/bin/terminus" "/usr/local/bin"
 ln -sf "$HOME/.composer/vendor/bin/drush" "/usr/local/bin"
