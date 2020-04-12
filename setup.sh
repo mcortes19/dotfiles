@@ -3,11 +3,11 @@
 # Install esencial apps and binaries with Brew.
 source ./brew.sh
 
-# Create dotfiles symlink.
-source ./symlink-dotfiles.sh
-
 # Install Oh-My-ZSH.
 source ./oh-my-zsh.sh
+
+# Create dotfiles symlink.
+source ./symlink-dotfiles.sh
 
 # Install Global Composer Packages.
 source ./composer.sh
