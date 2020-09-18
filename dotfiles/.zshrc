@@ -8,7 +8,7 @@
 # * ~/.exports extend export.
 # * ~/.functions add custom functions.
 # * ~/.extras can be used for other settings you don’t want to commit.
-for file in ~/.{aliases,exports,functions,path,theme,extras}; do
+for file in ~/.{aliases,exports,functions,path,zsh-theme,extras}; do
  [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
