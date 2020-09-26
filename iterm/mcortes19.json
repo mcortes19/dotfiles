@@ -50,7 +50,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.54509806632995605
   },
-  "Non-ASCII Anti Aliased" : false,
+  "Non-ASCII Anti Aliased" : true,
   "Sync Title" : true,
   "Disable Window Resizing" : true,
   "Description" : "Default",
@@ -61,7 +61,7 @@
     "slogin",
     "telnet"
   ],
-  "Non-ASCII Ligatures" : false,
+  "Non-ASCII Ligatures" : true,
   "Scrollback Lines" : 0,
   "Draw Powerline Glyphs" : true,
   "Status Bar Layout" : {
@@ -533,7 +533,7 @@
   },
   "Blur" : false,
   "Vertical Spacing" : 1,
-  "Normal Font" : "FiraCodeNerdFontComplete-Retina 14",
+  "Normal Font" : "HackNerdFontComplete-Regular 14",
   "Use Underline Color" : true,
   "Ansi 7 Color" : {
     "Red Component" : 0.97254902124404907,
