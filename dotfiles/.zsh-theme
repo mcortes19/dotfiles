@@ -22,6 +22,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   nvm
 )
 
+POWERLEVEL9K_ICON_PADDING=moderate
 # Disable Right Prompt.
 # POWERLEVEL9K_DISABLE_RPROMPT=true
 
@@ -31,7 +32,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 # User element settings
 POWERLEVEL9K_ALWAYS_SHOW_USER=true
 POWERLEVEL9K_USER_FOREGROUND=white
-POWERLEVEL9K_USER_BACKGROUND=cyan
+POWERLEVEL9K_USER_BACKGROUND=#085f51
 
 # Time element settings
 POWERLEVEL9K_TIME_FOREGROUND=cyan
@@ -39,7 +40,7 @@ POWERLEVEL9K_TIME_BACKGROUND=grey27
 
 # OS icon elements settings
 POWERLEVEL9K_OS_ICON_FOREGROUND=white
-POWERLEVEL9K_OS_ICON_BACKGROUND=grey27
+POWERLEVEL9K_OS_ICON_BACKGROUND=black
 
 # dir element settings
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
@@ -70,8 +71,6 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 # POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=7
 # POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
 
-# fonts config
-# https://medium.freecodecamp.org/how-you-can-style-your-terminal-like-medium-freecodecamp-or-any-way-you-want-f499234d48bc
 POWERLEVEL9K_MODE=nerdfont-complete
 
 # Uncomment the following line to use case-sensitive completion.
