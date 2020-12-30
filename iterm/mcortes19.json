@@ -1,11 +1,5 @@
 {
-  "Ansi 5 Color" : {
-    "Red Component" : 0.68235296010971069,
-    "Color Space" : "sRGB",
-    "Blue Component" : 1,
-    "Alpha Component" : 1,
-    "Green Component" : 0.5058823823928833
-  },
+  "Thin Strokes" : 3,
   "Working Directory" : "\/Users\/mcortes19",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -523,6 +517,7 @@
     "Green Component" : 0.1491314172744751
   },
   "Ambiguous Double Width" : false,
+  "Background Image Mode" : 0,
   "Cursor Type" : 1,
   "Ansi 0 Color" : {
     "Red Component" : 0.15294118225574493,
@@ -532,8 +527,8 @@
     "Green Component" : 0.15686275064945221
   },
   "Blur" : false,
+  "Normal Font" : "VictorMonoNerdFontComplete-Regular 14",
   "Vertical Spacing" : 1,
-  "Normal Font" : "HackNerdFontComplete-Regular 14",
   "Use Underline Color" : true,
   "Ansi 7 Color" : {
     "Red Component" : 0.97254902124404907,
@@ -588,11 +583,11 @@
     "Green Component" : 0.15686275064945221
   },
   "Screen" : 0,
-  "Initial Use Transparency" : true,
+  "Initial Use Transparency" : false,
   "Bound Hosts" : [
 
   ],
-  "Non Ascii Font" : "HackNerdFontComplete-Regular 14",
+  "Non Ascii Font" : "VictorMonoNerdFontComplete-Regular 14",
   "Ansi 13 Color" : {
     "Red Component" : 0.68235296010971069,
     "Color Space" : "sRGB",
@@ -603,7 +598,13 @@
   "Use Tab Color" : false,
   "Columns" : 160,
   "Visual Bell" : true,
+  "Custom Directory" : "No",
   "ASCII Ligatures" : true,
-  "Thin Strokes" : 1,
-  "Custom Directory" : "No"
+  "Ansi 5 Color" : {
+    "Red Component" : 0.68235296010971069,
+    "Color Space" : "sRGB",
+    "Blue Component" : 1,
+    "Alpha Component" : 1,
+    "Green Component" : 0.5058823823928833
+  }
 }
