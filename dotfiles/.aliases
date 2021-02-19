@@ -20,6 +20,5 @@ alias reload="exec ${SHELL} -l"
 
 #-- GIT --#
 alias gitc="git config --global --edit"
-alias ghide="git update-index --assume-unchanged"
-alias gunhide="git update-index --no-assume-unchanged"
-
+alias ghide="git update-index --skip-worktree"
+alias gunhide="git update-index --no-skip-worktree"
