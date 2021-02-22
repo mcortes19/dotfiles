@@ -21,3 +21,5 @@
   ui = true
 [pull]
   rebase = false
+[hub]
+  protocol = https
