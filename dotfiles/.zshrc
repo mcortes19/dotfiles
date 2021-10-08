@@ -25,7 +25,8 @@ plugins=(
   zsh-nvm
   docker
   docker-compose
-  vagrant
+  iterm2
+  pyenv
 )
 
 # Load OH-MY-ZSH themes and plugins.
@@ -38,3 +39,10 @@ source ~/.iterm2/.iterm2_shell_integration.zsh
 autoload -U compinit && compinit
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=030'
+
+# BEGIN SNIPPET: Platform.sh CLI configuration
+if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi
+# END SNIPPET
+# BEGIN SNIPPET: PYENV
+eval "$(pyenv init -)"
+# END SNIPPET

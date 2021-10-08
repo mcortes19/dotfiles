@@ -2,4 +2,4 @@
 
 #----- This file speeds up the process of running executable files. -----#
 
-export PATH="$HOME/.composer/vendor/bin:/usr/local/sbin:$PATH"
+export PATH="$PYENV_ROOT/bin:$HOME/.composer/vendor/bin:$HOME/.platformsh/bin:/usr/local/sbin:$PATH"
