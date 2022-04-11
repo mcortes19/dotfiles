@@ -27,6 +27,8 @@ plugins=(
   docker-compose
   iterm2
   pyenv
+  copypath
+  macos
 )
 
 # Load OH-MY-ZSH themes and plugins.
