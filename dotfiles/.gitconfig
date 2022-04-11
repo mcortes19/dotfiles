@@ -3,7 +3,7 @@
 [alias]
 
 [user]
-	name = Marvin J. Cortés
+  name = Marvin J. Cortés
   email = marvin.cortes@gmail.com
 [core]
   editor = code -a
