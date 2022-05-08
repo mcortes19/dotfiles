@@ -22,3 +22,11 @@ alias reload="exec ${SHELL} -l"
 alias gitc="git config --global --edit"
 alias ghide="git update-index --skip-worktree"
 alias gunhide="git update-index --no-skip-worktree"
+
+# -- EXA --#
+if [ -x "$(command -v exa)" ]; then
+  alias ls="exa --long --header --group --group-directories-first --icons --classify --git --color-scale"
+  alias lst="exa --tree --level=2 --long --header --group --group-directories-first --icons --classify --git --color-scale"
+  alias lsa="exa --long --header --all --group --group-directories-first --icons --classify --git --color-scale"
+  alias lsat="exa --tree --level=2 --long --header --all --group --group-directories-first --icons --classify --git --color-scale"
+fi

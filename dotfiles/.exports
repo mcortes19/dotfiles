@@ -19,8 +19,9 @@ export MANPAGER='less -X';
 export GPG_TTY=$TTY
 
 # Enable colors in order Atom One Dark Theme
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+# export CLICOLOR=1
+export EXA_COLORS="da=37"
+export EXA_ICON_SPACING=1
 
 #-- ZSH --#
 # Path to your oh-my-zsh installation.

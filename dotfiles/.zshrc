@@ -9,13 +9,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Load the shell dotfiles
-# * ~/.theme set the shell theme.
-# * ~/.path extend $PATH.
-# * ~/.aliases extend the system aliases.
 # * ~/.exports extend export.
-# * ~/.functions add custom functions.
-# * ~/.extras can be used for other settings you don’t want to commit.
-for file in ~/.{aliases,exports,functions,path,zsh-theme,extras}; do
+# * ~/.zsh-theme set the shell theme.
+for file in ~/.{exports,zsh-theme}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -46,12 +42,20 @@ source ~/.iterm2/.iterm2_shell_integration.zsh
 
 # zsh-completions.
 autoload -U compinit && compinit
+
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=030'
 
-# BEGIN SNIPPET: Platform.sh CLI configuration
-if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi
-# END SNIPPET
 # BEGIN SNIPPET: PYENV
 eval "$(pyenv init -)"
 # END SNIPPET
+
+# Load the shell dotfiles
+# * ~/.aliases extend the system aliases.
+# * ~/.functions add custom functions.
+# * ~/.path extend $PATH.
+# * ~/.extras can be used for other settings you don’t want to commit.
+for file in ~/.{aliases,functions,path,extras}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
