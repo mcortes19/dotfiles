@@ -20,13 +20,16 @@ BREW_PREFIX=$(brew --prefix)
 
 brew install ahoy
 brew install composer
-brew tap drud/ddev && brew install ddev
+brew install exa
 brew install git
-brew tap heroku/brew && brew install heroku
+brew install hub
 brew install php
 brew install tree
 brew install wget
+brew install yarn
 brew tap beeftornado/rmtree
+brew tap drud/ddev && brew install ddev
+brew tap heroku/brew && brew install heroku
 
 if test ! $(which zsh)
 then
@@ -35,23 +38,23 @@ then
   chsh -s /bin/zsh
 fi
 
-
 # Install Apps.
-brew cask install browserosaurus
-brew cask install docker
-brew cask install firefox
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install visual-studio-code
-brew cask install virtualbox virtualbox-extension-pack
-brew cask install vagrant
-brew cask install sequel-pro
-
-# Install taps
-brew tap homebrew/cask-fonts
+brew install browserosaurus
+brew install docker
+brew install firefox
+brew install google-chrome
+brew install insomnia
+brew install iterm2
+brew install sequel-pro
+brew install vagrant
+brew install virtualbox virtualbox-extension-pack
+brew install visual-studio-code
+brew install pantheon-systems/external/terminus
 
 # Install fonts.
-brew cask install font-hack-nerd-font
+brew tap homebrew/cask-fonts
+brew install font-hack-nerd-font
+brew install font-fira-code-nerd-font
 
 # Remove outdated versions from the cellar.
 brew cleanup

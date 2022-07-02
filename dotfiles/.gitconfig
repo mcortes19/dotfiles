@@ -5,6 +5,7 @@
 [user]
   name = Marvin J. Cortés
   email = marvin.cortes@gmail.com
+  signingkey = 2E9C780F
 [core]
   editor = code -a
 [code]
@@ -25,3 +26,7 @@
   protocol = https
 [init]
   defaultBranch = develop
+[commit]
+  gpgSign = true
+[tag]
+  gpgSign = true

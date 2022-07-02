@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 #----- This file contains useful functions to help you write less. -----#
 
 # Determine size of a file or total size of a directory
