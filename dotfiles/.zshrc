@@ -38,17 +38,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # iTerm2 integration
-source ~/.iterm2/.iterm2_shell_integration.zsh
+source ~/.iterm2_shell_integration.zsh
 
 # zsh-completions.
 autoload -U compinit && compinit
 
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=030'
-
-# BEGIN SNIPPET: PYENV
-eval "$(pyenv init -)"
-# END SNIPPET
 
 # Load the shell dotfiles
 # * ~/.aliases extend the system aliases.
@@ -61,6 +57,4 @@ done;
 unset file;
 
 # BEGIN SNIPPET: Platform.sh CLI configuration
-HOME=${HOME:-'/Users/mcortes19'}
-export PATH="$HOME/"'.platformsh/bin':"$PATH"
 if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET

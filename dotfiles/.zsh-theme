@@ -24,6 +24,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 )
 
 POWERLEVEL9K_ICON_PADDING=moderate
+POWERLEVEL9K_MODE=nerdfont-complete
 # Disable Right Prompt.
 # POWERLEVEL9K_DISABLE_RPROMPT=true
 
@@ -72,7 +73,6 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 # POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=7
 # POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
 
-POWERLEVEL9K_MODE=nerdfont-complete
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE=true
