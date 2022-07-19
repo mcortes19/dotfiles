@@ -2,4 +2,4 @@
 
 #----- This file speeds up the process of running executable files. -----#
 
-export PATH="/opt/homebrew/bin:$HOME/.composer/vendor/bin:$HOME/.platformsh/bin:/usr/local/sbin:$HOME/.platformsh/bin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/.composer/vendor/bin:$HOME/.platformsh/bin:/usr/local/sbin:$PATH"
