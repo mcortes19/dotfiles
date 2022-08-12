@@ -10,8 +10,9 @@ fi
 
 # Load the shell dotfiles
 # * ~/.exports extend export.
+# * ~/.path extend $PATH.
 # * ~/.zsh-theme set the shell theme.
-for file in ~/.{exports,zsh-theme}; do
+for file in ~/.{exports,path,zsh-theme}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -34,14 +35,21 @@ plugins=(
   macos
 )
 
+# zsh-completions.
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Load OH-MY-ZSH themes and plugins.
 source $ZSH/oh-my-zsh.sh
 
 # iTerm2 integration
 source ~/.iterm2_shell_integration.zsh
 
-# zsh-completions.
-autoload -U compinit && compinit
 
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=030'
@@ -49,9 +57,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=030'
 # Load the shell dotfiles
 # * ~/.aliases extend the system aliases.
 # * ~/.functions add custom functions.
-# * ~/.path extend $PATH.
 # * ~/.extras can be used for other settings you don’t want to commit.
-for file in ~/.{aliases,functions,path,extras}; do
+for file in ~/.{aliases,functions,extras}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
