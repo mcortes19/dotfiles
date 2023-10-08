@@ -8,11 +8,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Load the shell dotfiles
-# * ~/.exports extend export.
-# * ~/.path extend $PATH.
-# * ~/.zsh-theme set the shell theme.
-for file in ~/.{exports,path,zsh-theme}; do
+# Load dotfiles config.
+# * ~/.env-variables: custom environment variables.
+# * ~/.aliases extend the system aliases.
+# * ~/.functions add custom functions.
+# * ~/.p10k.zsh theme configuration.
+for file in ~/.{env-variables,aliases,functions,p10k.zsh}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -24,6 +25,7 @@ plugins=(
   brew
   git
   zsh-autosuggestions
+  zsh-better-npm-completion
   zsh-syntax-highlighting
   zsh-completions
   zsh-nvm
@@ -35,7 +37,16 @@ plugins=(
   macos
 )
 
-# zsh-completions.
+# Load OH-MY-ZSH themes and plugins.
+[[ -f "$ZSH/"'oh-my-zsh.sh' ]] && source $ZSH/oh-my-zsh.sh
+
+# Load iTerm2 integration
+[[ -f "$HOME/"'.iterm2_shell_integration.zsh' ]] && source ~/.iterm2_shell_integration.zsh
+
+# Load Platform.sh CLI configuration
+[[ -f "$HOME/"'.platformsh/shell-config.rc' ]] && . "$HOME/"'.platformsh/shell-config.rc'
+
+# Enable zsh-completions.
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -43,25 +54,3 @@ then
   autoload -Uz compinit
   compinit
 fi
-
-# Load OH-MY-ZSH themes and plugins.
-source $ZSH/oh-my-zsh.sh
-
-# iTerm2 integration
-source ~/.iterm2_shell_integration.zsh
-
-
-# zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=030'
-
-# Load the shell dotfiles
-# * ~/.aliases extend the system aliases.
-# * ~/.functions add custom functions.
-# * ~/.extras can be used for other settings you don’t want to commit.
-for file in ~/.{aliases,functions,extras}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
-
-# BEGIN SNIPPET: Platform.sh CLI configuration
-if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
