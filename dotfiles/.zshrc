@@ -8,6 +8,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Load dotfiles config.
+# * ~/.env-variables: custom environment variables.
+# * ~/.functions add custom functions.
+# * ~/.p10k.zsh theme configuration.
+for file in ~/.{env-variables,functions,p10k.zsh}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -28,15 +36,6 @@ plugins=(
   macos
 )
 
-# Load dotfiles config.
-# * ~/.env-variables: custom environment variables.
-# * ~/.functions add custom functions.
-# * ~/.p10k.zsh theme configuration.
-for file in ~/.{env-variables,functions,p10k.zsh}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
-
 # Load OH-MY-ZSH themes and plugins.
 [[ -f "$ZSH/"'oh-my-zsh.sh' ]] && source $ZSH/oh-my-zsh.sh
 
@@ -46,6 +45,7 @@ unset file;
 # Load Platform.sh CLI configuration
 [[ -f "$HOME/"'.platformsh/shell-config.rc' ]] && . "$HOME/"'.platformsh/shell-config.rc'
 
+# Load aliases dotfile
 [[ -f "$HOME/"'.aliases' ]] && source "$HOME/"'.aliases'
 
 # Enable zsh-completions.
