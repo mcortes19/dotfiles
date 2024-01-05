@@ -17,6 +17,12 @@ for file in ~/.{env-variables,functions,p10k.zsh}; do
 done;
 unset file;
 
+#  Plugin settings.
+zstyle ':omz:plugins:nvm' autoload yes
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' silent-autoload yes
+zstyle :omz:plugins:iterm2 shell-integration yes
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
@@ -27,20 +33,16 @@ plugins=(
   zsh-better-npm-completion
   zsh-syntax-highlighting
   zsh-completions
-  zsh-nvm
-  docker
-  docker-compose
+  nvm
   iterm2
-  pyenv
   copypath
-  macos
 )
 
 # Load OH-MY-ZSH themes and plugins.
 [[ -f "$ZSH/"'oh-my-zsh.sh' ]] && source $ZSH/oh-my-zsh.sh
 
 # Load iTerm2 integration
-[[ -f "$HOME/"'.iterm2_shell_integration.zsh' ]] && source ~/.iterm2_shell_integration.zsh
+# [[ -f "$HOME/"'.iterm2_shell_integration.zsh' ]] && source ~/.iterm2_shell_integration.zsh
 
 # Load Platform.sh CLI configuration
 [[ -f "$HOME/"'.platformsh/shell-config.rc' ]] && . "$HOME/"'.platformsh/shell-config.rc'

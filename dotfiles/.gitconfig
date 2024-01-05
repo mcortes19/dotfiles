@@ -6,6 +6,7 @@
   signingkey = A7F4D7ABCF248FAF
 [core]
   editor = code --wait
+  filemode = false
 [diff]
   tool = vscode
 [difftool "vscode"]
