@@ -23,10 +23,14 @@ alias gitc="git config --global --edit"
 alias ghide="git update-index --skip-worktree"
 alias gunhide="git update-index --no-skip-worktree"
 
-# -- EXA --#
-if [ -x "$(command -v exa)" ]; then
-  alias ls="exa --long --header --group --group-directories-first --icons --classify --git --color-scale"
-  alias lst="exa --tree --level=2 --long --header --group --group-directories-first --icons --classify --git --color-scale"
-  alias lsa="exa --long --header --all --group --group-directories-first --icons --classify --git --color-scale"
-  alias lsat="exa --tree --level=2 --long --header --all --group --group-directories-first --icons --classify --git --color-scale"
-fi
+# -- EZA --#
+alias ls="eza --long --no-filesize --no-time --header --group --group-directories-first --icons=always --classify=always --git --color-scale=all"
+alias lsa="eza --long --no-filesize --no-time --header --all --group --group-directories-first --icons=always --classify=always --git --color-scale=all"
+alias lst="eza --tree --level=2 --long --no-filesize --no-time --header --group --group-directories-first --icons=always --classify=always --git --color-scale=all"
+alias lsat="eza --tree --level=2 --long --no-filesize --no-time --header --all --group --group-directories-first --icons=always --classify=always --git --color-scale=all"
+
+# -- BAT --#
+alias cat="bat"
+
+# -- Z --#
+alias cd="z"

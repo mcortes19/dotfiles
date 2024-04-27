@@ -22,7 +22,7 @@
 [push]
   autoSetupRemote = true
 [init]
-  defaultBranch = develop
+	defaultBranch = main
 [commit]
   gpgSign = true
 [tag]
