@@ -3,7 +3,7 @@
 [user]
   name = Marvin J. Cortés
   email = marvin.cortes@gmail.com
-  signingkey = A7F4D7ABCF248FAF
+  signingkey = 3ED34F38817613BE
 [core]
   editor = code --wait
   filemode = false

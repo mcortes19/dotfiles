@@ -31,6 +31,3 @@ alias lsat="eza --tree --level=2 --long --no-filesize --no-time --header --all -
 
 # -- BAT --#
 alias cat="bat"
-
-# -- Z --#
-alias cd="z"

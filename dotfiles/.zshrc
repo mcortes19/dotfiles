@@ -27,6 +27,8 @@ zstyle :omz:plugins:iterm2 shell-integration yes
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  aliases
+  fzf
   brew
   git
   zsh-autosuggestions
@@ -36,6 +38,7 @@ plugins=(
   nvm
   iterm2
   copypath
+  zoxide
 )
 
 # Load OH-MY-ZSH themes and plugins.
@@ -90,3 +93,8 @@ _fzf_comprun() {
 
 #  Enable zoxide
 eval "$(zoxide init zsh)"
+
+# Lando
+export PATH="/Users/mcortes19/.lando/bin${PATH+:$PATH}"; #landopath
+export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+

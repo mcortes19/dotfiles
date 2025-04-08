@@ -18,9 +18,8 @@ brew upgrade
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
-brew install ahoy
 brew install composer
-brew install exa
+brew install eza
 brew install git
 brew install hub
 brew install php
@@ -29,7 +28,6 @@ brew install wget
 brew install yarn
 brew tap beeftornado/rmtree
 brew tap drud/ddev && brew install ddev
-brew tap heroku/brew && brew install heroku
 
 if test ! $(which zsh)
 then
@@ -46,10 +44,9 @@ brew install google-chrome
 brew install insomnia
 brew install iterm2
 brew install sequel-pro
-brew install vagrant
-brew install virtualbox virtualbox-extension-pack
 brew install visual-studio-code
 brew install pantheon-systems/external/terminus
+brew install orbstack
 
 # Install fonts.
 brew tap homebrew/cask-fonts
