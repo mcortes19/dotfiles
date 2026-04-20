@@ -23,3 +23,24 @@ function composer-link() {
   composer config repositories.$repositoryName '{"type": "path", "url": "'$1'", "options": {"symlink": true}}' --file composer.json
   composer require $2 @dev
 }
+
+
+# Generate Drush user login links for Columbia Pantheon sites.
+# Usage: culi <env>  e.g. culi dev
+function culi() {
+  for site in columbia-sps cusps-precollege cusps-summer; do
+    terminus drush "$site"."$1" -- uli;
+  done;
+};
+
+# Reindex Solr on Columbia Pantheon sites (clear, retrack, index, cache rebuild).
+# Usage: csolr <env>  e.g. csolr dev
+function csolr() {
+  for site in columbia-sps cusps-precollege cusps-summer; do
+    echo "==> Indexing Solr on $site.$1";
+    terminus drush "$site"."$1" -- sapi-c;
+    terminus drush "$site"."$1" -- sapi-rt;
+    terminus drush "$site"."$1" -- sapi-i;
+    terminus drush "$site"."$1" -- cr;
+  done;
+};

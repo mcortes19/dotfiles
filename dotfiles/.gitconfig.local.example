@@ -1,0 +1,7 @@
+# Copy this file to ~/.gitconfig.local and fill in your details.
+# This file is gitignored and should never be committed.
+
+[user]
+  name = Your Name
+  email = your@email.com
+  signingkey = YOUR_GPG_KEY_ID

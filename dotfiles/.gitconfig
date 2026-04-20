@@ -1,9 +1,9 @@
 #----- This file is only used by Git. -----#
+# Identity is stored in ~/.gitconfig.local (gitignored).
+# Copy dotfiles/.gitconfig.local.example to ~/.gitconfig.local and fill in your details.
 
-[user]
-  name = Marvin J. Cortés
-  email = marvin.cortes@gmail.com
-  signingkey = 3ED34F38817613BE
+[include]
+  path = ~/.gitconfig.local
 [core]
   editor = code --wait
   filemode = false

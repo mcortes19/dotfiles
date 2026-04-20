@@ -21,7 +21,7 @@ BREW_PREFIX=$(brew --prefix)
 brew install composer
 brew install eza
 brew install git
-brew install hub
+brew install gh
 brew install php
 brew install tree
 brew install wget
@@ -38,18 +38,17 @@ fi
 
 # Install Apps.
 brew install browserosaurus
-brew install docker
+brew install --formula docker  # CLI only; OrbStack provides the runtime
 brew install firefox
 brew install google-chrome
 brew install insomnia
 brew install iterm2
-brew install sequel-pro
+brew install sequel-ace
 brew install visual-studio-code
 brew install pantheon-systems/external/terminus
 brew install orbstack
 
 # Install fonts.
-brew tap homebrew/cask-fonts
 brew install font-hack-nerd-font
 brew install font-fira-code-nerd-font
 
