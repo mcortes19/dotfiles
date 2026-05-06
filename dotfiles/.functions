@@ -16,12 +16,117 @@ function fs() {
   fi;
 }
 
+# Link a local Composer package via path repository.
+# Supports DDEV projects by mounting the package into the container.
+# Usage: composer-link <path-to-package> <vendor/package> [repo-name]
 # https://fetzi.dev/add-composer-link-command/
 function composer-link() {
-  repositoryName=${3:-local}
+  local packagePath=$1
+  local packageName=$2
+  local repositoryName=${3:-local}
 
-  composer config repositories.$repositoryName '{"type": "path", "url": "'$1'", "options": {"symlink": true}}' --file composer.json
-  composer require $2 @dev
+  if [[ -z "$packagePath" || -z "$packageName" ]]; then
+    echo "Usage: composer-link <path-to-package> <vendor/package> [repo-name]"
+    return 1
+  fi
+
+  # Resolve to absolute path
+  local absPath
+  absPath=$(cd "$packagePath" 2>/dev/null && pwd)
+  if [[ $? -ne 0 ]]; then
+    echo "Error: path '$packagePath' does not exist."
+    return 1
+  fi
+
+  if [[ -f ".ddev/config.yaml" ]]; then
+    # --- DDEV project ---
+    local mountName
+    mountName=$(basename "$absPath")
+    local containerPath="/var/www/packages/$mountName"
+    local composeFile=".ddev/docker-compose.local-packages.yaml"
+    local volumeEntry="      - \"$absPath:$containerPath\""
+
+    if [[ -f "$composeFile" ]]; then
+      # Check if this mount already exists
+      if grep -qF "$absPath:" "$composeFile"; then
+        echo "Mount for '$absPath' already exists in $composeFile"
+      else
+        # Append new volume entry
+        echo "$volumeEntry" >> "$composeFile"
+      fi
+    else
+      # Create the compose override file
+      cat > "$composeFile" <<EOF
+services:
+  web:
+    volumes:
+$volumeEntry
+EOF
+    fi
+
+    echo "Restarting DDEV to apply mount..."
+    ddev restart
+
+    ddev composer config repositories.$repositoryName \
+      "{\"type\": \"path\", \"url\": \"$containerPath\", \"options\": {\"symlink\": true}}" \
+      --file composer.json
+    ddev composer require "$packageName" @dev
+  else
+    # --- Standard (non-DDEV) project ---
+    composer config repositories.$repositoryName \
+      "{\"type\": \"path\", \"url\": \"$absPath\", \"options\": {\"symlink\": true}}" \
+      --file composer.json
+    composer require "$packageName" @dev
+  fi
+}
+
+# Unlink a previously linked local Composer package.
+# Removes the path repository, the package, and (for DDEV) the volume mount.
+# Usage: composer-unlink <vendor/package> [repo-name]
+function composer-unlink() {
+  local packageName=$1
+  local repositoryName=${2:-local}
+
+  if [[ -z "$packageName" ]]; then
+    echo "Usage: composer-unlink <vendor/package> [repo-name]"
+    return 1
+  fi
+
+  if [[ -f ".ddev/config.yaml" ]]; then
+    # --- DDEV project ---
+    local composeFile=".ddev/docker-compose.local-packages.yaml"
+
+    # Remove the package first
+    ddev composer remove "$packageName"
+    ddev composer config --unset repositories.$repositoryName
+
+    # Clean up the volume mount
+    if [[ -f "$composeFile" ]]; then
+      local mountName
+      mountName=$(echo "$packageName" | sed 's|.*/||')
+
+      # Remove lines containing the mount path
+      local tmpFile="${composeFile}.tmp"
+      grep -v "/var/www/packages/.*$mountName" "$composeFile" > "$tmpFile"
+
+      # Check if any volumes remain
+      if grep -q '^\s*- "' "$tmpFile"; then
+        mv "$tmpFile" "$composeFile"
+      else
+        # No volumes left, remove the file entirely
+        rm -f "$tmpFile" "$composeFile"
+      fi
+
+      echo "Restarting DDEV to remove mount..."
+      ddev restart
+    fi
+  else
+    # --- Standard (non-DDEV) project ---
+    composer remove "$packageName"
+    composer config --unset repositories.$repositoryName
+  fi
+
+  echo "Unlinked $packageName (repository: $repositoryName)"
 }
 
 
